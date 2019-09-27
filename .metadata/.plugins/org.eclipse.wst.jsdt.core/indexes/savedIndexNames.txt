@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\alterbo_PC-19\Documents\GitHub\1909HackathonAGr\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1405973958.index
+4245342485.index
+2036066262.index
+2513048850.index
+1226385446.index
+3190732559.index
