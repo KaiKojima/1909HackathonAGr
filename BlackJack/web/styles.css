@@ -1,0 +1,210 @@
+html {
+	height: 100%;
+}
+
+body { /*	margin: top, left, bottom, right; */
+	margin: 0 20px 0 20px;
+	padding: 0px;
+	font: 10px normal Verdana, Arial, Helvetica, sans-serif;
+	background: #1d1d1d;
+	color: #fff;
+	height: 100%;
+}
+
+.bodywrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+	/* the bottom margin is the negative value of the footer's height */
+}
+
+.footer,.push {
+	height: 60px; /* .push must be the same height as .footer */
+	text-align: center;
+}
+
+h1 {
+	font: 5em normal Georgia, 'Times New Roman', Times, serif;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+h1 span {
+	color: #cbff78;
+}
+
+h1 small {
+	font: 0.2em normal Verdana, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1.5em;
+	display: block;
+	color: #666;
+}
+
+/* Menu styling */
+#links {
+	border-top: solid #ffffff 1px;
+	border-bottom: solid #ffffff 1px;
+	text-align: center;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 40px;
+	font-size: 2.0em;
+}
+
+#links ul {
+	margin: 0px;
+	padding: 0px;
+	font-size: 110%;
+	color: #ffffff;
+	line-height: 30px;
+	/*	line-height: 5%;*/
+}
+
+#links li {
+	list-style-type: none;
+	display: inline;
+	white-space: nowrap;
+}
+
+#links li a {
+	padding: 7px 10px;
+	color: #ffffff;
+	border: none;
+}
+
+#links li a:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#links li a:hover {
+	color: #000000;
+	background-color: #cbff78;
+	text-decoration: none;
+}
+
+.error {
+	font-size: 0.7em;
+	color: #C00;
+	margin-left: 130px;
+	text-align: left;
+	margin-top: 0px;
+}
+
+/* cards, buttons and game messages */
+.card {
+	text-align: center;
+	/*	height: 10%;*/
+	height: 100px;
+}
+
+.msg1 {
+	font-size: 175%;
+}
+
+.msg2 {
+	text-align: center;
+	visibility: hidden;
+	/*	height: 5%;*/
+	height: 50px;
+	font-size: 150%;
+}
+
+.msg3 {
+	float: left;
+	text-align: center;
+	visibility: hidden;
+	height: 50px;
+	/*	height: 5%;*/
+	font-size: 150%;
+}
+
+.msg4 {
+	float: right;
+	text-align: center;
+	visibility: hidden;
+	height: 50px;
+	/*	height: 5%;*/
+	font-size: 150%;
+}
+
+.msg5 {
+	float: left;
+	text-align: center;
+	height: 50px;
+	font-size: 175%;
+}
+
+.msg6 {
+	float: right;
+	text-align: center;
+	height: 50px;
+	font-size: 175%;
+}
+
+.wrap1 {
+	height: 100px;
+	overflow: hidden;
+	position: related;
+	/*	height: 10%; */
+	/*	height: 100;*/
+	/*  width:1200px;  Optional */
+}
+
+.wrap2 {
+	height: 25px;
+	overflow: hidden;
+	position: related;
+	/*  	height: 5%; */
+	/* 	height: 50;*/
+	/*  width:1200px;  Optional */
+}
+
+.left {
+	float: left;
+	/*  width:150px; */
+}
+
+.right {
+	float: right;
+	/*  width:150px; */
+}
+
+.btn1 {
+	font-size: 165%;
+}
+
+.btn2 {
+	display: none;
+	font-size: 165%;
+}
+
+.btn3 { /*	text-align: left;*/
+	display: none;
+	float: left;
+	font-size: 150%;
+}
+
+.btn4 { /* text-align: right; */
+	display: none;
+	float: right;
+	font-size: 150%;
+}
+
+.bigtext {
+	text-align: center;
+	/* height: 50px;  */
+	font-size: 225%;
+	text-decoration: underline;
+}
+
+.paragraph1 {
+	text-align: center;
+}
+
+.paragraph2 {
+	font-size: 150%;
+	text-align: center;
+}

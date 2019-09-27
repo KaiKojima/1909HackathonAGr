@@ -1,0 +1,60 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+
+	<!-- this bean is for using messages.properties file which this application 
+		does not use -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+
+		<property name="basename" value="messages" />
+	</bean>
+
+	<!-- a typical view resolver approach. If views.properties file is empty 
+		then default name of views is used -->
+
+	<bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property value="views" name="basename" />
+		<property value="1" name="order" />
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property value="org.springframework.web.servlet.view.JstlView"
+			name="viewClass" />
+		<property value="/" name="prefix" />
+		<property value=".jsp" name="suffix" />
+		<property value="2" name="order" />
+	</bean>
+
+	<!-- End of view resolver approach -->
+
+	<!-- Backend configuration handled in application.xml and imported -->
+	<import resource="/application.xml" />
+
+
+	<context:component-scan base-package="org.sean.blackjack.control" />
+	<mvc:annotation-driven />
+
+	<!-- Disable caching in browsers. This prevents all pages of this application from being cached -->
+	<mvc:interceptors>
+		<bean id="webContentInterceptor"
+			class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+			<property name="cacheSeconds" value="0" />
+			<property name="useExpiresHeader" value="true" />
+			<property name="useCacheControlHeader" value="true" />
+			<property name="useCacheControlNoStore" value="true" />
+		</bean>
+	</mvc:interceptors>
+
+</beans>
