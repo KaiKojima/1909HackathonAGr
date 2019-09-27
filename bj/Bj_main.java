@@ -1,4 +1,4 @@
-package bj;
+package testJsp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +11,25 @@ public class Bj_main {
 		Card c = new Card();
 		Scanner scanner = new Scanner(System.in);
 
-		while (true) {
+		System.out.println("ゲームを開始します");
 
-			System.out.println("ゲームを開始します");
+		int maxBet = 10;
+		int bet = 0;
+
+		for (int i = 1; i <= 10; i++) {
+			while (true) {
+
+				System.out.print("掛け金：");
+				bet = scanner.nextInt();
+
+				if (bet > 10) {
+					System.out.println("無効");
+					continue;
+				}
+				System.out.println(bet + "で開始");
+				break;
+			}
+
 			//空の山札を作成
 			List<Integer> deck = new ArrayList<>(52);
 			//山札をシャッフル
@@ -57,6 +73,7 @@ public class Bj_main {
 
 			//プレイヤーがカードを引くフェーズ
 			while (true) {
+				System.out.println();
 				System.out.println("カードを引きますか？Yes:y or No:n");
 				Scanner scan = new Scanner(System.in);
 				String str = scan.next();
@@ -76,6 +93,8 @@ public class Bj_main {
 					//プレイヤーのバーストチェック
 					if (c.isBusted(playerPoint)) {
 						System.out.println("残念、バーストしてしまいました。");
+						maxBet = maxBet - bet;
+						System.out.println("残金：" + maxBet);
 						return;
 					}
 				} else {
@@ -99,7 +118,9 @@ public class Bj_main {
 					//ディーラーのバーストチェック
 					if (c.isBusted(dealerPoint)) {
 						System.out.println("ディーラーがバーストしました。あなたの勝ちです！");
-						return;
+						maxBet = maxBet + bet;
+						System.out.println("残金：" + maxBet);
+
 					}
 
 				}
@@ -109,18 +130,27 @@ public class Bj_main {
 			System.out.println("ディーラーのポイントは" + dealerPoint);
 			System.out.println();
 
+
 			if (playerPoint == dealerPoint) {
 				System.out.println("引き分けです。");
 
 			} else if (playerPoint > dealerPoint) {
 				System.out.println("勝ちました！");
-
+				if (playerPoint == 21) {
+					maxBet = maxBet + bet * 2;
+					System.out.println("残金：" + maxBet);
+				} else {
+					maxBet = maxBet + bet;
+					System.out.println("残金：" + maxBet);
+				}
 			} else {
 				System.out.println("負けました・・・");
-
+				maxBet = maxBet - bet;
+				System.out.println("残金：" + maxBet);
 			}
 
 		}
-
+		System.out.println("最終コイン" + maxBet);
 	}
+
 }

@@ -1,4 +1,4 @@
-package bj;
+package testJsp;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -104,13 +104,13 @@ public class Card {
 	static String toSuit(int cardNumber) {
 		switch ((cardNumber - 1) / 13) {
 		case 0:
-			return "♣";
+			return " ♣";
 		case 1:
-			return "♢";
+			return " ♢";
 		case 2:
-			return "♡";
+			return " ♡";
 		case 3:
-			return "♠";
+			return " ♠";
 		default:
 			return "例外です";
 		}
