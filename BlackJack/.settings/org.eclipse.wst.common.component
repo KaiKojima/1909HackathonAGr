@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="BlackJack">
+    <wb-module deploy-name="git_BlackJack">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/"/>
-        <property name="context-root" value="BlackJack"/>
-        <property name="java-output-path" value="/BlackJack/build/classes"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="git_BlackJack"/>
+        <property name="java-output-path" value="/git_BlackJack/build/classes"/>
     </wb-module>
 </project-modules>
